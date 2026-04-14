@@ -1,27 +1,25 @@
 package com.example.energia.entity;
 
-import com.example.energia.enumeration.Role;
-import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDateTime;
 @Data
-@Entity
-@Table(name="app_user")
+@Document(collection =  "users")
 
 public class User {
     @Id
-    @GeneratedValue
-    private Long id;
 
-    @Column(nullable = false)
+    private String id;
+
     private String nome;
 
-    @Column(nullable =false, unique = true)
     private String email;
 
-    @Column(nullable = false)
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    private Role ruolo; // enum Role { UTENTE, AMMINISTRATORE }
+    private LocalDateTime registratoIl = LocalDateTime.now();
+
+
 }

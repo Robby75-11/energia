@@ -2,15 +2,10 @@ package com.example.energia.dto;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 @Data
-
-public class UserDto {
+public class UserResponseDto {
     private String id;
     private String nome;
     private String email;
-    private LocalDateTime registratoIl;
-
 
 }
